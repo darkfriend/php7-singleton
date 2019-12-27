@@ -23,9 +23,6 @@ trait Singleton
      */
     public static function getInstance($newSession = false, $options = [])
     {
-        if (!function_exists('curl_init')) {
-            throw new \Exception('Curl is not found!');
-        }
         if (!self::$_instance || $newSession) {
             self::$_instance = new self($options);
         }
