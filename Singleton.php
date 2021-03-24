@@ -7,7 +7,7 @@ namespace darkfriend\helpers;
  * Trait Singleton
  * @package darkfriend\helpers
  * @author darkfriend <hi@darkfriend.ru>
- * @version 1.0.0
+ * @version 1.0.8
  */
 trait Singleton
 {
@@ -23,8 +23,8 @@ trait Singleton
      */
     public static function getInstance($newSession = false, $options = [])
     {
-        if (!self::$_instance || $newSession) {
-            self::$_instance = new self($options);
+        if (!static::$_instance || $newSession) {
+            static::$_instance = new static($options);
         }
         return self::$_instance;
     }
